@@ -1,0 +1,43 @@
+{
+  "hash": "5d9eca3d",
+  "configHash": "71002000",
+  "lockfileHash": "3be52578",
+  "browserHash": "2b4f9900",
+  "optimized": {
+    "@angular/core": {
+      "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "4fee8351",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "2d10d617",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "24777834",
+      "needsInterop": false
+    },
+    "tone": {
+      "src": "../../../../../node_modules/tone/build/esm/index.js",
+      "file": "tone.js",
+      "fileHash": "fee57309",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-C2SGF46T": {
+      "file": "chunk-C2SGF46T.js"
+    },
+    "chunk-L64PIKNO": {
+      "file": "chunk-L64PIKNO.js"
+    },
+    "chunk-RP7MFOMX": {
+      "file": "chunk-RP7MFOMX.js"
+    }
+  }
+}

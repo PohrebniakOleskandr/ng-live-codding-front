@@ -1,0 +1,649 @@
+{
+  "currentInterConnection": null,
+  "synths": {
+    "synth": {
+      "name": "synth",
+      "seqs": ['a'],
+      "variants": {
+        "a": {
+          "effect": "E1",
+          "rythm": "R1",
+          "sound": "S1"
+        },
+        "b": {
+          "effect": "E1",
+          "rythm": "R2",
+          "sound": "S1"
+        },
+        "c": {
+          "effect": "E1",
+          "rythm": "R3",
+          "sound": "S1"
+        }
+      },
+      "config": {
+        "volume": 5,
+        "effects": {
+          "E1": {
+            "feedbackDelay": {
+              "delayTime": 0,
+              "feedback": 0.1,
+              "wet": 0.1
+            },
+            "reverb": {
+              "decay": 0
+            },
+            "distortion": {
+              "distortion": "0"
+            },
+            "freeverb": {
+              "roomSize": 0.7,
+              "dampening": 3000
+            }
+          }
+        },
+        "rythms": {
+          "R0": "----------------",
+          "R1": "-X--------------",
+          "R2": "X-------X-------",
+          "R3": "-X---X---X---X--",
+          "R5": "X-X-X-X-X-X-X-X-",
+          "R6": "-X-X-X-X-X-X-X-X",
+          "R7": "1+2n3n",
+          "R8": "0,1+2n",
+          "R9": "R(XX--)",
+          "R10": "R(--X-X-X)",
+          "R11": "R(-XXX)",
+          "R12": "R(XX-X-X-X-)"
+        },
+        "sounds": {
+          "S1": {
+            "X": {
+              "fr": "+[78]",
+              "duration": "1s",
+              "oscillator": {
+                "partials": []
+              },
+              "envelope": {
+                "attack": 0.0005,
+                "decay": 0.1,
+                "sustain": 0.35,
+                "release": 0.95
+              }
+            }
+          },
+          "S2": {
+            "X": {
+              "fr": "+[85, 95, 115]",
+              "duration": "16n",
+              "oscillator": {
+                "partials": []
+              }
+            }
+          },
+          "S3": {
+            "X": {
+              "fr": "+[110, 120, 130, 140, 130, 120, 110]",
+              "duration": "16n",
+              "oscillator": {
+                "partials": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "amSynth": {
+      "name": "amSynth",
+      "seqs": [],
+      "variants": {
+        "a": {
+          "effect": "E1",
+          "rythm": "R1",
+          "sound": "S1"
+        },
+        "b": {
+          "effect": "E1",
+          "rythm": "R2",
+          "sound": "S1"
+        },
+        "c": {
+          "effect": "E1",
+          "rythm": "R3",
+          "sound": "S1"
+        }
+      },
+      "config": {
+        "volume": 0,
+        "effects": {
+          "E1": {
+            "feedbackDelay": {
+              "delayTime": 0,
+              "feedback": 0.1,
+              "wet": 0.1
+            },
+            "reverb": {
+              "decay": 0
+            },
+            "distortion": {
+              "distortion": "0"
+            },
+            "freeverb": {
+              "roomSize": 0.7,
+              "dampening": 3000
+            }
+          }
+        },
+        "rythms": {
+          "R0": "----------------",
+          "R1": "X---------------",
+          "R2": "---X-----X------",
+          "R3": "-X---X---X---X--",
+          "R5": "X-X-X-X-X-X-X-X-",
+          "R6": "-X-X-X-X-X-X-X-X",
+          "R7": "1+2n3n",
+          "R8": "0,1+2n",
+          "R9": "R(XX--)",
+          "R10": "R(--X-X-X)",
+          "R11": "R(-XXX)",
+          "R12": "R(XX-X-X-X-)"
+        },
+        "sounds": {
+          "S1": {
+            "X": {
+              "fr": "+[30, 60]",
+              "duration": "16n",
+              "oscillator": {
+                "partials": []
+              },
+              "envelope": {
+                "attack": 0.001,
+                "decay": 3,
+                "sustain": 0,
+                "release": 1
+              }
+            }
+          },
+          "S2": {
+            "X": {
+              "fr": "+[85, 95, 115]",
+              "duration": "16n",
+              "oscillator": {
+                "partials": []
+              }
+            }
+          },
+          "S3": {
+            "X": {
+              "fr": "+[110, 120, 130, 140, 130, 120, 110]",
+              "duration": "16n",
+              "oscillator": {
+                "partials": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "duoSynth": {
+      "name": "duoSynth",
+      "seqs": [],
+      "variants": {
+        "a": {
+          "effect": "E1",
+          "rythm": "R1",
+          "sound": "S1"
+        },
+        "b": {
+          "effect": "E1",
+          "rythm": "R2",
+          "sound": "S1"
+        },
+        "c": {
+          "effect": "E1",
+          "rythm": "R3",
+          "sound": "S1"
+        }
+      },
+      "config": {
+        "volume": 0,
+        "effects": {
+          "E1": {
+            "feedbackDelay": {
+              "delayTime": 0,
+              "feedback": 0.1,
+              "wet": 0.1
+            },
+            "reverb": {
+              "decay": 0
+            },
+            "distortion": {
+              "distortion": "0"
+            },
+            "freeverb": {
+              "roomSize": 0.7,
+              "dampening": 3000
+            }
+          }
+        },
+        "rythms": {
+          "R0": "----------------",
+          "R1": "X---------------",
+          "R2": "---X-----X------",
+          "R3": "-X---X---X---X--",
+          "R5": "X-X-X-X-X-X-X-X-",
+          "R6": "-X-X-X-X-X-X-X-X",
+          "R7": "1+2n3n",
+          "R8": "0,1+2n",
+          "R9": "R(XX--)",
+          "R10": "R(--X-X-X)",
+          "R11": "R(-XXX)",
+          "R12": "R(XX-X-X-X-)"
+        },
+        "sounds": {
+          "S1": {
+            "X": {
+              "fr": "+[30, 60]",
+              "duration": "16n",
+              "oscillator": {
+                "partials": []
+              },
+              "envelope": {
+                "attack": 0.001,
+                "decay": 3,
+                "sustain": 0,
+                "release": 1
+              }
+            }
+          },
+          "S2": {
+            "X": {
+              "fr": "+[85, 95, 115]",
+              "duration": "16n",
+              "oscillator": {
+                "partials": []
+              }
+            }
+          },
+          "S3": {
+            "X": {
+              "fr": "+[110, 120, 130, 140, 130, 120, 110]",
+              "duration": "16n",
+              "oscillator": {
+                "partials": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "fmSynth": {
+      "name": "fmSynth",
+      "seqs": [],
+      "variants": {
+        "a": {
+          "effect": "E1",
+          "rythm": "R1",
+          "sound": "S1"
+        },
+        "b": {
+          "effect": "E1",
+          "rythm": "R2",
+          "sound": "S1"
+        },
+        "c": {
+          "effect": "E1",
+          "rythm": "R3",
+          "sound": "S1"
+        }
+      },
+      "config": {
+        "volume": 0,
+        "effects": {
+          "E1": {
+            "feedbackDelay": {
+              "delayTime": 0,
+              "feedback": 0.1,
+              "wet": 0.1
+            },
+            "reverb": {
+              "decay": 0
+            },
+            "distortion": {
+              "distortion": "0"
+            },
+            "freeverb": {
+              "roomSize": 0.7,
+              "dampening": 3000
+            }
+          }
+        },
+        "rythms": {
+          "R0": "----------------",
+          "R1": "X---------------",
+          "R2": "---X-----X------",
+          "R3": "-X---X---X---X--",
+          "R5": "X-X-X-X-X-X-X-X-",
+          "R6": "-X-X-X-X-X-X-X-X",
+          "R7": "1+2n3n",
+          "R8": "0,1+2n",
+          "R9": "R(XX--)",
+          "R10": "R(--X-X-X)",
+          "R11": "R(-XXX)",
+          "R12": "R(XX-X-X-X-)"
+        },
+        "sounds": {
+          "S1": {
+            "X": {
+              "fr": "+[30, 60]",
+              "duration": "16n",
+              "oscillator": {
+                "partials": []
+              },
+              "envelope": {
+                "attack": 0.001,
+                "decay": 3,
+                "sustain": 0,
+                "release": 1
+              }
+            }
+          },
+          "S2": {
+            "X": {
+              "fr": "+[85, 95, 115]",
+              "duration": "16n",
+              "oscillator": {
+                "partials": []
+              }
+            }
+          },
+          "S3": {
+            "X": {
+              "fr": "+[110, 120, 130, 140, 130, 120, 110]",
+              "duration": "16n",
+              "oscillator": {
+                "partials": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "metalSynth": {
+      "name": "metalSynth",
+      "seqs": [],
+      "variants": {
+        "a": {
+          "effect": "E1",
+          "rythm": "R1",
+          "sound": "S1"
+        },
+        "b": {
+          "effect": "E1",
+          "rythm": "R2",
+          "sound": "S1"
+        },
+        "c": {
+          "effect": "E1",
+          "rythm": "R3",
+          "sound": "S1"
+        }
+      },
+      "config": {
+        "volume": 0,
+        "effects": {
+          "E1": {
+            "feedbackDelay": {
+              "delayTime": 0,
+              "feedback": 0.1,
+              "wet": 0.1
+            },
+            "reverb": {
+              "decay": 0
+            },
+            "distortion": {
+              "distortion": "0"
+            },
+            "freeverb": {
+              "roomSize": 0.7,
+              "dampening": 3000
+            }
+          }
+        },
+        "rythms": {
+          "R0": "----------------",
+          "R1": "X---------------",
+          "R2": "---X-----X------",
+          "R3": "-X---X---X---X--",
+          "R5": "X-X-X-X-X-X-X-X-",
+          "R6": "-X-X-X-X-X-X-X-X",
+          "R7": "1+2n3n",
+          "R8": "0,1+2n",
+          "R9": "R(XX--)",
+          "R10": "R(--X-X-X)",
+          "R11": "R(-XXX)",
+          "R12": "R(XX-X-X-X-)"
+        },
+        "sounds": {
+          "S1": {
+            "X": {
+              "fr": "+[30, 60]",
+              "duration": "16n",
+              "oscillator": {
+                "partials": []
+              },
+              "envelope": {
+                "attack": 0.001,
+                "decay": 3,
+                "sustain": 0,
+                "release": 1
+              }
+            }
+          },
+          "S2": {
+            "X": {
+              "fr": "+[85, 95, 115]",
+              "duration": "16n",
+              "oscillator": {
+                "partials": []
+              }
+            }
+          },
+          "S3": {
+            "X": {
+              "fr": "+[110, 120, 130, 140, 130, 120, 110]",
+              "duration": "16n",
+              "oscillator": {
+                "partials": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "membraneSynth": {
+      "name": "membraneSynth",
+      "seqs": [],
+      "variants": {
+        "a": {
+          "effect": "E1",
+          "rythm": "R1",
+          "sound": "S1"
+        },
+        "b": {
+          "effect": "E1",
+          "rythm": "R2",
+          "sound": "S1"
+        },
+        "c": {
+          "effect": "E1",
+          "rythm": "R3",
+          "sound": "S1"
+        }
+      },
+      "config": {
+        "volume": 0,
+        "effects": {
+          "E1": {
+            "feedbackDelay": {
+              "delayTime": 0,
+              "feedback": 0.1,
+              "wet": 0.1
+            },
+            "reverb": {
+              "decay": 0
+            },
+            "distortion": {
+              "distortion": "0"
+            },
+            "freeverb": {
+              "roomSize": 0.7,
+              "dampening": 3000
+            }
+          }
+        },
+        "rythms": {
+          "R0": "----------------",
+          "R1": "X---------------",
+          "R2": "---X-----X------",
+          "R3": "-X---X---X---X--",
+          "R5": "X-X-X-X-X-X-X-X-",
+          "R6": "-X-X-X-X-X-X-X-X",
+          "R7": "1+2n3n",
+          "R8": "0,1+2n",
+          "R9": "R(XX--)",
+          "R10": "R(--X-X-X)",
+          "R11": "R(-XXX)",
+          "R12": "R(XX-X-X-X-)"
+        },
+        "sounds": {
+          "S1": {
+            "X": {
+              "fr": "+[30, 60]",
+              "duration": "16n",
+              "oscillator": {
+                "partials": []
+              },
+              "envelope": {
+                "attack": 0.001,
+                "decay": 3,
+                "sustain": 0,
+                "release": 1
+              }
+            }
+          },
+          "S2": {
+            "X": {
+              "fr": "+[85, 95, 115]",
+              "duration": "16n",
+              "oscillator": {
+                "partials": []
+              }
+            }
+          },
+          "S3": {
+            "X": {
+              "fr": "+[110, 120, 130, 140, 130, 120, 110]",
+              "duration": "16n",
+              "oscillator": {
+                "partials": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "pluckSynth": {
+      "name": "pluckSynth",
+      "seqs": [],
+      "variants": {
+        "a": {
+          "effect": "E1",
+          "rythm": "R1",
+          "sound": "S1"
+        },
+        "b": {
+          "effect": "E1",
+          "rythm": "R2",
+          "sound": "S1"
+        },
+        "c": {
+          "effect": "E1",
+          "rythm": "R3",
+          "sound": "S1"
+        }
+      },
+      "config": {
+        "volume": 0,
+        "effects": {
+          "E1": {
+            "feedbackDelay": {
+              "delayTime": 0,
+              "feedback": 0.1,
+              "wet": 0.1
+            },
+            "reverb": {
+              "decay": 0
+            },
+            "distortion": {
+              "distortion": "0"
+            },
+            "freeverb": {
+              "roomSize": 0.7,
+              "dampening": 3000
+            }
+          }
+        },
+        "rythms": {
+          "R0": "----------------",
+          "R1": "X---------------",
+          "R2": "---X-----X------",
+          "R3": "-X---X---X---X--",
+          "R5": "X-X-X-X-X-X-X-X-",
+          "R6": "-X-X-X-X-X-X-X-X",
+          "R7": "1+2n3n",
+          "R8": "0,1+2n",
+          "R9": "R(XX--)",
+          "R10": "R(--X-X-X)",
+          "R11": "R(-XXX)",
+          "R12": "R(XX-X-X-X-)"
+        },
+        "sounds": {
+          "S1": {
+            "X": {
+              "fr": "+[30, 60]",
+              "duration": "16n",
+              "oscillator": {
+                "partials": []
+              },
+              "envelope": {
+                "attack": 0.001,
+                "decay": 3,
+                "sustain": 0,
+                "release": 1
+              }
+            }
+          },
+          "S2": {
+            "X": {
+              "fr": "+[85, 95, 115]",
+              "duration": "16n",
+              "oscillator": {
+                "partials": []
+              }
+            }
+          },
+          "S3": {
+            "X": {
+              "fr": "+[110, 120, 130, 140, 130, 120, 110]",
+              "duration": "16n",
+              "oscillator": {
+                "partials": []
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

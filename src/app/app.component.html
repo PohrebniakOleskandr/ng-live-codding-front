@@ -1,0 +1,18 @@
+<button (click)="consent()" [disabled]="isConsented">
+  consent
+</button>
+
+<button (click)="toggleRecording()" [disabled]="!isConsented" >
+  REC
+</button>
+
+<button (click)="play()" [disabled]="!isConsented" >
+  play
+</button>
+
+<button (click)="textToCode(currentTrackCode.value)" [disabled]="!isConsented" >
+  eval
+</button>
+
+<textarea #currentTrackCode></textarea>
+
