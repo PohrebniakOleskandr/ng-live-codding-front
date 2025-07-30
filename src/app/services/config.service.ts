@@ -82,7 +82,10 @@ export class ConfigService {
             ...synthsNnameToTypeSrcArr.reduce((internalSum, {name})=>{
               return {
                 ...internalSum,
-                [name]: [],
+                [name]: {
+                  "volume": 0,
+                  "val": []
+                },
               };
             }, {})
           },
@@ -90,7 +93,10 @@ export class ConfigService {
             ...Object.keys(this.sampleService.getSampleUrls()).reduce((internalSum, internalCurrent)=>{
               return {
                 ...internalSum,
-                [internalCurrent]: [],
+                [internalCurrent]: {
+                  "volume": 0,
+                  "val": []
+                },
               };
             }, {})
           },

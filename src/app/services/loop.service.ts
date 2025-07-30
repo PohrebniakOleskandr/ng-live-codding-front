@@ -94,29 +94,30 @@ export class LoopService {
         }, {}) as any;
 
         this.loopBeat = new Tone.Loop((time) => {
-
             synthNames.forEach((name) => {
-                //debugger;
                 const config = this.source.synths;
                 const setting = config[name];
 
                 const type = setting.type;
                 const variants = setting.variants;
-                const settingSeqs = setting?.seqs;
-
+                const settingSeqs = setting?.seqs?.val;
+                const currentSeqVol = setting?.seqs.volume; 
+                
+                
                 // the problem is here, in this version 
-                if (settingSeqs.length === 0) {
+                if (!settingSeqs || settingSeqs?.length === 0) {
                     return;
                 }
 
-                const currentSeq = setting.seqs[this.iterrators[name].j];
+                const currentSeq = setting.seqs.val[this.iterrators[name].j];
 
                 if (i === 15 && settingSeqs.length > 1) {
                     this.iterrators[name].j = (this.iterrators[name].j + 1) % settingSeqs.length;
                 }
 
                 const currentVariant = variants[currentSeq];
-                const encodedgridLine = setting.config.rythms[currentVariant.rythm];
+                //debugger;
+                const encodedgridLine = setting.config.rythms[currentVariant.rythm]//.val;
 
                 if (!encodedgridLine) {
                     debugger;
@@ -173,9 +174,7 @@ export class LoopService {
                     );
                     const duration = currentSynthConfig.sounds[currentVariant.sound][currentGridSymbol].duration;
 
-
-                    // here
-                    synth.instrument.volume.value = currentSynthConfig?.volume || 0;
+                    synth.instrument.volume.value = currentSeqVol ?? (currentSynthConfig?.volume || 0);
 
                     const envelope = currentSynthConfig.sounds[currentVariant.sound][currentGridSymbol].envelope;
 
@@ -206,20 +205,23 @@ export class LoopService {
                 const setting = config[name];
 
                 const variants = setting.variants;
-                const settingSeqs = setting?.seqs;
+                const settingSeqs = setting?.seqs?.val;
+                const currentSeqVol = setting?.seqs?.volume;
 
                 // the problem is here, in this version 
-                if (settingSeqs.length === 0) {
+                if (!settingSeqs || settingSeqs?.length === 0) {
                     return;
                 }
-                const currentSeq = setting.seqs[this.sampleIterrators[name].j];
+
+                const currentSeq = setting.seqs.val[this.sampleIterrators[name].j];
 
                 if (i === 15 && settingSeqs.length > 1) {
                     this.sampleIterrators[name].j = (this.sampleIterrators[name].j + 1) % settingSeqs.length;
                 }
 
                 const currentVariant = variants[currentSeq];
-                const encodedgridLine = setting.config.rythms[currentVariant.rythm];
+                
+                const encodedgridLine = setting.config.rythms[currentVariant.rythm]//.val;
                 //debugger;
                 if (!encodedgridLine) {
                     debugger;
@@ -258,7 +260,7 @@ export class LoopService {
 
                     //const duration = currentSynthConfig.sounds[currentVariant.sound][currentGridSymbol].duration;
 
-                    sampleInstrument.instrument.volume.value = currentSynthConfig?.volume || 0;
+                    sampleInstrument.instrument.volume.value = currentSeqVol ?? (currentSynthConfig?.volume || 0);
 
                     sampleInstrument.instrument.start(0, skip, duration);
 
@@ -267,7 +269,8 @@ export class LoopService {
             });
 
             i = (i + 1) % 16;    // 0..15
-        }, '32n'); //4n = 120 bpm <-> '16n'
+        }, this.source.interval || '32n'); //4n = 120 bpm <-> '16n'
+        //PLACE THIS SHIT OUT ASAP
 
         // check out what to do it this deprecated case
         Tone.Transport.start();

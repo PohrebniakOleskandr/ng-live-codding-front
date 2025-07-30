@@ -65,6 +65,53 @@ export class AppComponent {
     this.loopService.setSource(this.seqService.populateAllSeq(window.source));
     this.loopService.reInitIterrators();
   }
+
+
+  // here will be tmp migrators logic
+  normalizeCodeWithAddingVolume(text: string) {
+    eval(`window.source = ${text};`);
+
+    const configObj = window.source;
+    
+    const interConnections = Object.entries(configObj.interConnections).reduce(
+      (accumulator, [key, val]) => ({
+        ...accumulator,
+        [key]: {
+          samples: 
+          Object.entries((val as any)?.samples || [])?.reduce(
+            (acc2: any, [key2, val2]: any) => ({
+              ...acc2,
+              [key2]: {
+                volume: 0,
+                val: val2 as any,
+              }
+            }),
+            {},
+          ),
+          synths: 
+          Object.entries((val as any)?.synths || [])?.reduce(
+            (acc2: any, [key2, val2]: any) => ({
+              ...acc2,
+              [key2]: {
+                volume: 0,
+                val: val2 as any,
+              }
+            }),
+            {},
+          ),
+        },
+      }),
+      {},
+    );
+
+    const updatedConfig = {
+      ...configObj,
+      interConnections,
+    };
+
+    this.currentTrackCode.nativeElement.value = JSON.stringify(updatedConfig, null, 2);
+  }
+
 }
 
 //backlog late march 2025:

@@ -4,3 +4,6 @@
 /bugs
 backlog.txt
 /node_modules
+.tsbuildinfo
+/docs
+*.tsbuildinfo
