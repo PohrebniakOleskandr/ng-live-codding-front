@@ -1,9 +1,51 @@
-# Compiled output
+# private
 /public
 /TRACKS
 /bugs
 backlog.txt
-/node_modules
-.tsbuildinfo
 /docs
+
+# Node modules
+node_modules/
+
+# Compiled output
+dist/
+out-tsc/
+
+# TypeScript build info
 *.tsbuildinfo
+
+# Angular cache
+.angular/
+
+# Environment files (optional: if you don’t want to commit secrets)
+# Uncomment if you have sensitive info in them:
+# src/environments/environment*.ts
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Coverage reports
+coverage/
+
+# Build tools
+tmp/
+temp/
+
+# Package managers
+package-lock.json
+yarn.lock
+.pnpm-debug.log

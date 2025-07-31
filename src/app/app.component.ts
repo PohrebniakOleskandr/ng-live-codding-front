@@ -1,11 +1,14 @@
 import { Component, inject, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 import * as Tone from 'tone';
+
 import { InstrumentsBuilderService } from './services/instruments-builder.service';
 import { SeqService } from './services/seq.service';
 import { ConfigService } from './services/config.service';
 import { LoopService } from './services/loop.service';
+import { FormsModule } from '@angular/forms';
 
 declare global {
   interface Window {
@@ -15,12 +18,32 @@ declare global {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CodemirrorModule, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  @ViewChild('currentTrackCode') currentTrackCode: any;
+  codeMirrorOptions = {
+    value: '{\n  "key": "value"\n}',
+    mode: "application/json",
+    theme: "material",
+    lineNumbers: true,
+    lineWrapping: true,
+    indentUnit: 2,
+    tabSize: 2,
+    indentWithTabs: false,
+    autoCloseBrackets: true,
+    matchBrackets: true,
+    foldGutter: true,
+    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+    placeholder: "Start typing JSON…",
+    autofocus: true,
+    readOnly: false
+    //viewportMargin: Infinity,
+  };
+
+  public content: string = '';
+  //@ViewChild('currentTrackCode') currentTrackCode: any;
 
   public loopService = inject(LoopService);
   public seqService = inject(SeqService);
@@ -37,7 +60,7 @@ export class AppComponent {
     this.loopService.consent();
     this.isConsented = true;
 
-    this.currentTrackCode.nativeElement.value = JSON.stringify(this.loopService.getSource(), null, 2);
+    this.content = JSON.stringify(this.loopService.getSource(), null, 2);
   }
 
   play() {
@@ -109,7 +132,35 @@ export class AppComponent {
       interConnections,
     };
 
-    this.currentTrackCode.nativeElement.value = JSON.stringify(updatedConfig, null, 2);
+    this.content = JSON.stringify(updatedConfig, null, 2);
+  }
+
+  #interconnectionIterration = 0;
+
+  updateTxtWithNewFragment(text: string) {
+    //deep copy 
+    const prevSrc = structuredClone(window.source);
+    const incomingSrc = JSON.parse(text);
+
+    const interConnectionsArr = Object.keys(incomingSrc.interConnections);
+    const interConnectionsArrLength = interConnectionsArr.length;
+    const lastInterconnectionKey = interConnectionsArr[interConnectionsArrLength-1];
+    const newInterconnectionKey  = `${lastInterconnectionKey}${this.#interconnectionIterration}`;
+
+    //TODO: parse iterration from last interconnection name
+    this.#interconnectionIterration++;
+
+    const newSrc = {
+      ...prevSrc,
+      interConnections: {
+        ...prevSrc.interconnections,
+        [newInterconnectionKey]: incomingSrc.interConnections[lastInterconnectionKey],
+      },
+    };
+
+    eval(`window.source = ${newSrc};`);
+
+    this.content = JSON.stringify(newSrc, null, 2);
   }
 
 }

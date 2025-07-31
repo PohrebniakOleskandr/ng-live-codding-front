@@ -10,7 +10,7 @@
   play
 </button>
 
-<button (click)="textToCode(currentTrackCode.value)" [disabled]="!isConsented" >
+<button (click)="textToCode(content)" [disabled]="!isConsented" >
   eval
 </button>
 
@@ -19,5 +19,15 @@
   normalize
 </button> -->
 
-<textarea #currentTrackCode></textarea>
+<!-- <textarea #currentTrackCode></textarea> -->
 
+<button (click)="updateTxtWithNewFragment(content)" [disabled]="!isConsented" >
+  update
+</button>
+
+<!-- <div class="container"> -->
+  <ngx-codemirror
+    [ngModel]="content"
+    [options]="codeMirrorOptions"
+  ></ngx-codemirror>
+<!-- </div> -->
