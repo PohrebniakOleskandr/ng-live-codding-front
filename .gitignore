@@ -16,7 +16,7 @@ out-tsc/
 *.tsbuildinfo
 
 # Angular cache
-#angular/
+.angular/
 
 # Environment files (optional: if you don’t want to commit secrets)
 # Uncomment if you have sensitive info in them:
